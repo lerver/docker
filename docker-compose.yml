@@ -4,9 +4,9 @@ services:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '800:80'  # 冒号左边可以改成自己服务器未被占用的端口
+      - '80:80'  # 冒号左边可以改成自己服务器未被占用的端口
       - '81:81'  # 冒号左边可以改成自己服务器未被占用的端口
-      - '4443:443' # 冒号左边可以改成自己服务器未被占用的端口
+      - '443:443' # 冒号左边可以改成自己服务器未被占用的端口
     volumes:
       - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中
       - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中
