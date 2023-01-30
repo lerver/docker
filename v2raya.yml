@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    v2ray:
+        restart: always
+        privileged: false
+        network_mode: host
+        container_name: v2raya
+        environment:
+            - V2RAYA_LOG_FILE=/tmp/v2raya.log
+        volumes:
+            - '/lib/modules:/lib/modules:ro'
+            - '/etc/resolv.conf:/etc/resolv.conf'
+            - '/etc/v2raya:/etc/v2raya'
+        image: mzz2017/v2ray
